@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Вечность пахнет дизелем</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+<header>
+	<div class="container">
+		<img class="logo" src="{% get_static_prefix %}images/meduza_io.jpg">
+		<nav>
+			<ul>
+				<li><a href="#">Новости</a></li>
+				<li><a href="#">Истории</a></li>
+				<li><a href="#">Разбор</a></li>
+				<li><a href="#">Игры</a></li>
+				<li><a href="#">Шапито</a></li>
+				<li><a href="#">Подкасты</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<div class="main"><div class="container">
+{% block content %}
+
+	{% if latest_articles_list %}
+
+		{% for a in latest_articles_list %}
+			<a href="#">{{a.title}}</a> <br>
+		{% endfor %}
+
+	{% else %}
+		Nothing to show
+	{% endif %}
+
+{% endblock %}
+</div></div>
+
+<footer>
+	<div class="container">
+		Footer
+	</div>
+</footer>
+</body>
+</html>

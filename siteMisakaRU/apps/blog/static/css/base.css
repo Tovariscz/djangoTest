@@ -1,0 +1,37 @@
+.container:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.container {
+	width: 100%;
+	max-width: 1024px;
+	padding: 15px;
+	margin: 0 auto;
+	background-color: #f0d9d3;
+}
+
+.logo {
+	float: left;
+	max-height: 70px;
+}
+
+nav {
+	float: right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav a {
+	text-decoration: none;
+	line-height: 38px;
+}
